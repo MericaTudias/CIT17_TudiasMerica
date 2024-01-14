@@ -8,19 +8,21 @@
 <body>
     <?php
      print("<br><strong> PHP- Constants </strong><br>");
-     print("br");
+     print("<br>");
      define("MINSIZE", 50);
      echo MINSIZE;
      echo constant("MINSIZE");
 
+     print("<br>");
      print("<br><strong> Valid and Invalid Constant Names </strong><br>");
-     print("Valid Constant Names");
+     print("<br>");
+     print("<strong>Valid Constant Names</strong><br>");
      define("ONE", "first thing <br>");
      define("TWO2", "second thing <br>");
-     define("THREE_3", "third thing <br>")
+     define("THREE_3", "third thing <br>");
      echo ONE, TWO2, THREE_3;
-     print("Invalid Constant Names");
-     define("2TWO", "second thing");
+     print("<br><strong>Invalid Constant Names</strong><br>");
+     define("2TWO", "second thing <br>");
      define ("__THREE__", "third value");
      echo constant("2TWO");
      echo(__THREE__);
