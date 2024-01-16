@@ -1,5 +1,5 @@
 CREATE DATABASE StudentRecord;
-
+USE StudentRecord;
 CREATE table Student(
     StudentID int not null,
     FirstName varchar(255),
@@ -29,7 +29,6 @@ CREATE table Instructor(
 CREATE table Enrollment(
     EnrollmentID int NOT NULL,
     StudentID int(255),
-    CourseID int(255),
     CourseID int(255),
     ErollmentDate varchar(255),
     Grade varchar(255),
