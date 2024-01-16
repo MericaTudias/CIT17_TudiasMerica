@@ -19,19 +19,20 @@
         print("ASP-style tags = $ASPstyle <br>");
         print("HTML script tag = $HTMLscript <br>");
 
-        print("<br><strong>Commenting PHP Code</strong>");
+        print("<br><strong>Commenting in PHP</strong><br>");
+        print("<br>");
         # Note: Single line comment starts with # and // (do not include <br> tags)
+        print "<strong>Single line commnets</strong>";
         print "<br> # This is a comment, and <br>
         # This is the second line of the comment. <br>
         // This is a comment too.";
-        print "<br>These are the different style of a single line comment.";
         # Note: Multiline comment is enclose with /*...*/ (do not include <br> tags)
+        print("<br>");
+        print "<br><strong>Multiline commnet</strong>";
         print "<br>/*This is a comment with multiline <br>
                 Author : Manny Paquiao <br>
                 Purpose: Multiline Demo <br>
                 Subject: PHP*/";
-        print "<br> This is an example with multiline comments.";
-
     ?>
 </body>
 </html>
