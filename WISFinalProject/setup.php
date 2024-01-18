@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 
 $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
 if ($conn->query($sql) === TRUE) {
-    echo "Dtabese created sucessfully <br>";
+    echo "";
 } else {
     echo "Error creating database: " . $conn->error;
 }
@@ -29,9 +29,9 @@ $sql = "CREATE TABLE IF NOT EXISTS Student (
     PRIMARY KEY(StudentID))";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Student table created successfully <br>";
+        echo "";
     } else {
-        echo "Error creating table: " $conn->error;
+        echo "Error creating table: " . $conn->error;
     }
 
 $sql = "CREATE TABLE IF NOT EXISTS Course (
@@ -41,9 +41,9 @@ $sql = "CREATE TABLE IF NOT EXISTS Course (
     PRIMARY KEY(CourseID))";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Student table created successfully <br>";
+        echo "";
     } else {
-        echo "Error creating table: " $conn->error;
+        echo "Error creating table: " . $conn->error;
     }
 
 $sql = "CREATE TABLE IF NOT EXISTS Instructor (
@@ -55,26 +55,8 @@ $sql = "CREATE TABLE IF NOT EXISTS Instructor (
     PRIMARY KEY(InstructorID))";
     
     if ($conn->query($sql) === TRUE) {
-        echo "Student table created successfully <br>";
+        echo "";
     } else {
-        echo "Error creating table: " $conn->error;
+        echo "Error creating table: " . $conn->error;
     }
-    
-$sql = "CREATE TABLE IF NOT EXISTS Enrollment (
-    EnrollmentID int not null,
-    StudentID int(255),
-    CourseID int(255),
-    EnrollmentDate varchar(255),
-    Grade varchar(255),
-    PRIMARY KEY(EnrollmentID)
-    FOREIGN KEY(StudentID) REFERENCES Student(StudentID),
-    FOREIGN KEY(CourseID) REFERENCES Course(CourseID))";
-        
-    if ($conn->query($sql) === TRUE) {
-        echo "Student table created successfully <br>";
-    } else {
-        echo "Error creating table: " $conn->error;
-    }
-
-$conn->close();
 ?>
