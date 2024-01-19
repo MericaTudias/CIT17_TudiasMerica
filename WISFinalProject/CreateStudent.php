@@ -1,5 +1,5 @@
 <?php
-    require_once "Setup.php";
+    require_once "setup.php";
     if(isset($_POST['submitstudent'])){
 
         $studentid = $_POST['studentid'];

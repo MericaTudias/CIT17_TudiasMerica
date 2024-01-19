@@ -14,6 +14,76 @@
 </head>
 <body>
     <section>
+        <h1 style="text-align: center;margin: 50px 0;">Users Form</h1>
+        <div class="container">
+         <form action="CreateUser.php" method="post">
+          <div class="row">
+            <div class="col-md-4 mb-3">
+                <label for="userid">User ID</label>
+                <input type="int" class="form-control" id="userid" placeholder="User ID" name ="userid" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="username">Name</label>
+                <input type="varchar" class="form-control" id="username" placeholder="Username" name ="username" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="email">Email</label>
+                <input type="varchar" class="form-control" id="email" placeholder="Email" name ="email" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="userpassword">Password</label>
+                <input type="varchar" class="form-control" id="userpassword" placeholder="Password" name ="userpassword" required>
+            </div>
+            <div class="form-group col-lg-2" style="display: grid;align-items:  flex-end;">
+                <input type="submit" name="submituser" id="submituser" class="btn btn-primary">
+            </div>
+          </div>
+         </form>
+        </div>
+    </section>
+    <section style="margin: 50px 0;">
+        <div class="container">
+            <table class="table table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">User ID</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                        require_once "setup.php";
+                        $sql_query = "SELECT * FROM user";
+                        if ($result = $conn ->query($sql_query)) {
+                            while ($row = $result -> fetch_assoc()) { 
+                                $UserID = $row['UserID'];
+                                $UserName = $row['UserName'];
+                                $Email = $row['Email'];
+                                $UserPassword = $row['UserPassword'];
+                    ?>
+                    
+                    <tr class="trow">
+                        <td><?php echo $UserID; ?></td>
+                        <td><?php echo $UserName; ?></td>
+                        <td><?php echo $Email; ?></td>
+                        <td><?php echo $UserPassword; ?></td>
+                        <td><a href="UpdateUser.php?id=<?php echo $UserID; ?>" class="btn btn-primary">Update</a></td>
+                        <td><a href="DeleteUser.php?id=<?php echo $UserID; ?>" class="btn btn-danger">Delete</a></td>
+                    </tr>
+
+                    <?php
+                            } 
+                        } 
+                    ?>
+                </tbody>
+              </table>
+        </div>
+    </section>
+    <section>
         <h1 style="text-align: center;margin: 50px 0;">Student Form</h1>
         <div class="container">
          <form action="CreateStudent.php" method="post">
